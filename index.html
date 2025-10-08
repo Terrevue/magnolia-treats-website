@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magnolia Treats by Mia</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Custom styles to apply our fonts and colors */
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: #FFF7F9; /* A very light, warm pink */
+        }
+        .font-pacifico {
+            font-family: 'Pacifico', cursive;
+        }
+        .brand-pink {
+            color: #F8B4C8; /* A soft pink from the logo */
+        }
+        .brand-text {
+             color: #8B575C; /* A darker, warm pink/brown */
+        }
+        .brand-bg-light {
+            background-color: #FFF7F9;
+        }
+        .brand-bg-pink {
+            background-color: #FCEFF3;
+        }
+        .brand-button {
+            background-color: #F8B4C8;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        .brand-button:hover {
+            background-color: #F49AAE;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body class="brand-bg-light brand-text">
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div>
+                <img src="images/logos/logo02.png" alt="Magnolia Treats Logo" class="h-14 w-auto">
+            </div>
+            <div class="hidden md:flex space-x-8 text-lg">
+                <a href="#about" class="hover:text-pink-400 transition-colors">About Mia</a>
+                <a href="#treats" class="hover:text-pink-400 transition-colors">Our Treats</a>
+                <a href="#comic" class="hover:text-pink-400 transition-colors">Weekly Comic</a>
+                <a href="#order" class="hover:text-pink-400 transition-colors">Order Now</a>
+            </div>
+            <div class="md:hidden">
+                <!-- Mobile menu button can be added here if needed -->
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="container mx-auto px-6 py-12 md:py-20">
+        <section class="flex flex-col md:flex-row items-center gap-8">
+            <div class="md:w-1/2 text-center md:text-left">
+                <h1 class="font-pacifico text-5xl md:text-7xl brand-pink">Baked with Love.</h1>
+                <p class="mt-4 text-xl md:text-2xl brand-text">Welcome to Magnolia Treats, where every cookie is a little piece of happiness, freshly baked by Mia!</p>
+                <a href="#treats" class="mt-8 inline-block brand-button font-bold py-3 px-8 rounded-full text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all">
+                    Discover Our Treats
+                </a>
+            </div>
+            <div class="md:w-1/2 mt-8 md:mt-0">
+                <!-- Using the Mia cartoon character sheet image -->
+                <img src="images/cartoon_mia.png" alt="Cartoon of Mia the baker" class="w-full max-w-md mx-auto rounded-lg">
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 md:py-24">
+            <div class="text-center">
+                <h2 class="font-pacifico text-4xl md:text-5xl brand-text">Hello! I'm Mia!</h2>
+                <p class="mt-4 max-w-3xl mx-auto text-lg">
+                    I believe the best ingredient is a dash of fun and a spoonful of love. I started Magnolia Treats in my kitchen to share my sweet creations with everyone. From runaway dough to flour clouds, every day is a baking adventure!
+                </p>
+            </div>
+        </section>
+
+        <!-- Treats Section -->
+        <section id="treats" class="py-16 md:py-24 brand-bg-pink rounded-3xl">
+            <div class="text-center px-4">
+                <h2 class="font-pacifico text-4xl md:text-5xl brand-text">Our Favorite Treats</h2>
+                <p class="mt-4 text-lg">Handmade, decorated, and guaranteed to make you smile.</p>
+            </div>
+            <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+                <!-- Cookie Card 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg text-center transform hover:scale-105 transition-transform">
+                    <img src="https://placehold.co/400x300/F8B4C8/8B575C?text=Magnolia+Cookie" alt="Magnolia Sugar Cookie" class="w-full h-48 object-cover rounded-xl mx-auto">
+                    <h3 class="text-2xl font-bold mt-4 brand-text">Magnolia Sugar Cookies</h3>
+                    <p class="mt-2">Our signature buttery sugar cookie, decorated with a sweet hint of vanilla icing. Almost too pretty to eat... almost!</p>
+                </div>
+                <!-- Cookie Card 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg text-center transform hover:scale-105 transition-transform">
+                    <img src="https://placehold.co/400x300/D29B7A/FFFFFF?text=Chocolate+Chip" alt="Classic Chocolate Chip Cookie" class="w-full h-48 object-cover rounded-xl mx-auto">
+                    <h3 class="text-2xl font-bold mt-4 brand-text">Classic Chocolate Chip</h3>
+                    <p class="mt-2">Perfectly soft and chewy, loaded with melty chocolate chips. A timeless classic for a reason!</p>
+                </div>
+                <!-- Cookie Card 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-lg text-center transform hover:scale-105 transition-transform">
+                    <img src="https://placehold.co/400x300/A7D8F0/8B575C?text=Funfetti+Fun" alt="Funfetti Celebration Cookie" class="w-full h-48 object-cover rounded-xl mx-auto">
+                    <h3 class="text-2xl font-bold mt-4 brand-text">Funfetti Celebration</h3>
+                    <p class="mt-2">A party in a cookie! A sweet vanilla cookie packed with colorful sprinkles, inside and out.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Weekly Comic Section -->
+        <section id="comic" class="py-16 md:py-24">
+            <div class="text-center">
+                <h2 class="font-pacifico text-4xl md:text-5xl brand-text">Mia's Weekly Adventure</h2>
+                <p class="mt-4 text-lg">A little peek into the fun and chaos of the Magnolia Treats kitchen!</p>
+            </div>
+            <div class="mt-10 max-w-4xl mx-auto">
+                <!-- Using the Flour POOF comic strip -->
+                <img src="https://storage.googleapis.com/gemini-prod-us-west1-423521392225/f8373a6a-a530-4e36-a3c3-d9d1369d6756" alt="Comic strip of Mia and the great flour cloud" class="w-full rounded-2xl shadow-xl border-8 border-white">
+            </div>
+        </section>
+        
+        <!-- Order Section -->
+        <section id="order" class="py-16 md:py-24 text-center brand-bg-pink rounded-3xl">
+            <h2 class="font-pacifico text-4xl md:text-5xl brand-text">Ready for a Treat?</h2>
+            <p class="mt-4 text-lg max-w-2xl mx-auto">I'd love to bake something special for you! For custom orders, questions, or just to say hello, please send an email.</p>
+            <a href="mailto:orders@magnolia-treats.com" class="mt-8 inline-block brand-button font-bold py-4 px-10 rounded-full text-xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all">
+                Email Mia!
+            </a>
+            <p class="mt-4 text-sm">Serving Slidell, Louisiana and surrounding areas.</p>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white mt-16">
+        <div class="container mx-auto px-6 py-6 text-center text-gray-600">
+            <img src="images/logos/logo02.png" alt="Magnolia Treats Logo" class="h-12 w-auto mx-auto mb-4">
+            <p>&copy; 2025 Magnolia Treats. All Rights Reserved.</p>
+            <p class="text-xs mt-2">Made with ❤️ in Slidell, Louisiana</p>
+        </div>
+    </footer>
+
+</body>
+</html>
