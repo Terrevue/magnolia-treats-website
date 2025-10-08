@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles */
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #FFF7F9;
+}
+
+.font-pacifico {
+    font-family: 'Pacifico', cursive;
+}
+
+.brand-pink {
+    color: #F8B4C8;
+}
+
+.brand-text {
+    color: #8B575C;
+}
+
+.brand-bg-light {
+    background-color: #FFF7F9;
+}
+
+.brand-bg-pink {
+    background-color: #FCEFF3;
+}
+
+.brand-button {
+    background-color: #F8B4C8;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.brand-button:hover {
+    background-color: #F49AAE;
+}
+
+html {
+    scroll-behavior: smooth;
+}
