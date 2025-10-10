@@ -1,0 +1,54 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "images" # Folder where uploaded images will be stored
+public_folder: "images" # Path for images in the published site
+
+collections:
+  - name: "content"
+    label: "Website Content"
+    files:
+      - name: "about"
+        label: "About Section"
+        file: "content/about.json"
+        fields:
+          - {label: "Heading", name: "heading", widget: "string", default: "Hello! I'm Mia!"}
+          - {label: "About Text", name: "text", widget: "text"}
+
+      - name: "treats"
+        label: "Cookie Treats"
+        file: "content/treats.json"
+        fields:
+          - label: "Cookies"
+            name: "cookies"
+            widget: "list"
+            fields:
+              - {label: "Name", name: "name", widget: "string"}
+              - {label: "Description", name: "description", widget: "text"}
+              - {label: "Image", name: "image", widget: "image"}
+
+      - name: "hero"
+        label: "Hero Section"
+        file: "content/hero.json"
+        fields:
+          - {label: "Heading", name: "heading", widget: "string", default: "Baked with Love."}
+          - {label: "Subheading", name: "subheading", widget: "text"}
+
+      - name: "contact"
+        label: "Contact Info"
+        file: "content/contact.json"
+        fields:
+          - {label: "Email", name: "email", widget: "string"}
+          - {label: "Location", name: "location", widget: "string", default: "Serving Slidell, Louisiana and surrounding areas."}
+
+  - name: "comics"
+    label: "Weekly Comics"
+    folder: "content/comics"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Comic Image", name: "image", widget: "image"}
+      - {label: "Alt Text", name: "alt", widget: "string"}

@@ -1,0 +1,19 @@
+{
+  "cookies": [
+    {
+      "name": "Magnolia Sugar Cookies",
+      "description": "Our signature buttery sugar cookie, decorated with a sweet hint of vanilla icing. Almost too pretty to eat... almost!",
+      "image": "https://placehold.co/400x300/F8B4C8/8B575C?text=Magnolia+Cookie"
+    },
+    {
+      "name": "Classic Chocolate Chip",
+      "description": "Perfectly soft and chewy, loaded with melty chocolate chips. A timeless classic for a reason!",
+      "image": "https://placehold.co/400x300/D29B7A/FFFFFF?text=Chocolate+Chip"
+    },
+    {
+      "name": "Funfetti Celebration",
+      "description": "A party in a cookie! A sweet vanilla cookie packed with colorful sprinkles, inside and out.",
+      "image": "https://placehold.co/400x300/A7D8F0/8B575C?text=Funfetti+Fun"
+    }
+  ]
+}
