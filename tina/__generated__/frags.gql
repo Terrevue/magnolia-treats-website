@@ -1,0 +1,35 @@
+fragment HeroParts on Hero {
+  __typename
+  heading
+  subheading
+}
+
+fragment AboutParts on About {
+  __typename
+  heading
+  text
+}
+
+fragment TreatsParts on Treats {
+  __typename
+  cookies {
+    __typename
+    name
+    description
+    image
+  }
+}
+
+fragment ContactParts on Contact {
+  __typename
+  email
+  location
+}
+
+fragment ComicsParts on Comics {
+  __typename
+  title
+  date
+  image
+  alt
+}
