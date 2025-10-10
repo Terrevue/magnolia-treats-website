@@ -7,9 +7,9 @@
 
 ---
 
-## 📋 Current Status: IN PROGRESS - Setting up TinaCMS
+## 📋 Current Status: IN PROGRESS - Waiting for TinaCMS Branch Indexing
 
-We are **90% complete** with the website setup. Currently setting up a content management system (CMS) so Mia (non-technical user) can edit the website herself.
+We are **95% complete** with the website setup. TinaCMS is installed and configured, but waiting for TinaCloud to index the `main` branch before the admin interface can be built.
 
 ---
 
@@ -52,13 +52,16 @@ We are **90% complete** with the website setup. Currently setting up a content m
   - `content/contact.json` - Contact email and location
   - `content/comics/` - Weekly comic uploads (folder created)
 
-### 6. CMS Selection
+### 6. CMS Selection & Setup
 - [x] Initially tried Netlify CMS (deprecated)
 - [x] Discovered Netlify Identity is deprecated
 - [x] Removed Netlify CMS files
 - [x] Decided on TinaCMS (modern, actively maintained)
 - [x] Installed TinaCMS dependencies
 - [x] Created TinaCMS configuration file (`tina/config.js`)
+- [x] Created TinaCloud account and project
+- [x] Added Client ID and Token to Netlify environment variables
+- [ ] **BLOCKED:** Waiting for TinaCloud to index `main` branch
 
 ---
 
@@ -73,49 +76,41 @@ TinaCMS provides a visual editing interface at `/admin` where Mia can:
 - **NO CODING REQUIRED**
 
 ### Why We're Stuck
-TinaCMS requires a free cloud account to authenticate GitHub access. The build fails with:
-```
-Error: Client not configured properly. Missing clientId, token
-```
+TinaCloud needs to index the `main` branch before we can build the admin interface. The branch indexing hasn't started yet, showing "No branches found" in the TinaCloud dashboard.
 
 ### What's Needed to Continue
 
-**OPTION A: Complete TinaCMS Setup (Recommended)**
+**Waiting for TinaCloud Branch Indexing:**
 
-1. **Create TinaCMS Cloud Account:**
-   - Go to: https://app.tina.io/register
-   - Sign up with GitHub account (Terrevue)
+The issue is that TinaCloud isn't detecting/indexing the `main` branch automatically. Here are possible solutions:
 
-2. **Create TinaCMS Project:**
-   - Click "New Project" in Tina dashboard
-   - Connect repository: `Terrevue/magnolia-treats-website`
-   - Select branch: `main`
+1. **Wait (10-30 minutes):** Sometimes indexing is delayed
+2. **Check GitHub Integration:**
+   - Go to: https://app.tina.io/projects/52f20b97-10c3-4b40-b614-4c13f6e5045e/overview
+   - Verify GitHub connection is working
+   - Look for "Re-sync" or "Refresh" button
+3. **Contact Tina Support:** There may be a webhook/integration issue
+4. **Alternative:** Use TinaCMS in local-only mode (no cloud required)
 
-3. **Get Credentials:**
-   - Copy **Client ID** (looks like: `abc123xyz...`)
-   - Copy **Read-only Token** (looks like: `tok_...`)
+**Once Branch is Indexed:**
 
-4. **Add to Netlify Environment Variables:**
-   - URL: https://app.netlify.com/sites/magnoliatreats/settings/env
-   - Add variable: `TINA_CLIENT_ID` = [paste client ID]
-   - Add variable: `TINA_TOKEN` = [paste token]
-
-5. **Update Build Command on Netlify:**
-   - URL: https://app.netlify.com/sites/magnoliatreats/settings/deploys
-   - Build command: `npm run build`
-   - Publish directory: `./`
-
-6. **Deploy:**
+1. Build admin interface:
    ```bash
-   git add .
-   git commit -m "Complete TinaCMS setup"
+   export TINA_CLIENT_ID="52f20b97-10c3-4b40-b614-4c13f6e5045e"
+   export TINA_TOKEN="7628d96c023bf7102a7e5c676cb6cdd0ed7fc16b"
+   npm run tina:build
+   ```
+
+2. Commit and push admin files:
+   ```bash
+   git add admin/
+   git commit -m "Add TinaCMS admin interface"
    git push
    ```
 
-7. **Access Admin:**
-   - Go to: https://magnoliatreats.netlify.app/admin
-   - Log in with GitHub
-   - Edit content!
+3. Update netlify.toml build command back to `npm run build`
+
+4. Access admin at: https://magnoliatreats.netlify.app/admin
 
 **OPTION B: Simple Alternative (No Cloud Service)**
 
